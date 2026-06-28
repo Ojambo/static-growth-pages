@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="About | AI-Enabled Growth Demo" description="About this Astro demo project and the developer behind it.">
+  <Header title="About This Demo" subtitle="Built to showcase static-site engineering skills" />
+
+  <main class="main">
+    <section class="about">
+      <div class="container">
+        <article>
+          <h2>Purpose</h2>
+          <p>
+            This project demonstrates proficiency in <strong>Astro</strong>, modern static-site architecture,
+            and growth engineering best practices. It was built as a practical demonstration of skills
+            relevant to high-velocity marketing web operations.
+          </p>
+
+          <h2>What's Included</h2>
+          <ul>
+            <li><strong>Reusable Components</strong> — Header, Footer, CTAButton, FeatureCard, LeadForm</li>
+            <li><strong>Static-Site Generation</strong> — Pre-rendered pages with instant performance</li>
+            <li><strong>Schema.org Markup</strong> — Structured data for AEO/GEO optimization</li>
+            <li><strong>Lead Capture Forms</strong> — With hidden fields for campaign attribution</li>
+            <li><strong>ABM Campaign Template</strong> — Personalized landing page structure</li>
+            <li><strong>Responsive Design</strong> — Mobile-first CSS with modern layouts</li>
+            <li><strong>Sitemap Generation</strong> — Automatic sitemap for SEO</li>
+            <li><strong>Git-Based Workflow</strong> — Ready for CI/CD and team collaboration</li>
+          </ul>
+
+          <h2>Deployment</h2>
+          <p>
+            This project is configured for deployment on <strong>Vercel</strong> or <strong>Netlify</strong>.
+            Zero-config deployment with automatic CI/CD on GitHub pushes.
+          </p>
+
+          <h2>About the Developer</h2>
+          <p>
+            25+ years of full-stack web development experience with expertise in static-site frameworks,
+            marketing technology integrations, AI/ML, and high-velocity campaign execution.
+            Based in Ontario, Canada.
+          </p>
+          <p>
+            <a href="https://ojambo.com" target="_blank" rel="noopener">Ojambo.com</a> |
+            <a href="https://github.com/ojambo" target="_blank" rel="noopener">GitHub</a> |
+            <a href="https://linkedin.com/in/ojambo" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main {
+    min-height: 60vh;
+  }
+  .about {
+    padding: 3rem 1rem;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  article {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  h2 {
+    color: #1a1a2e;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+  h2:first-child {
+    margin-top: 0;
+  }
+  p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  li {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 0.25rem;
+  }
+  a {
+    color: #4361ee;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

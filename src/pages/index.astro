@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+const features = [
+  {
+    title: 'Reusable Components',
+    description: 'Flexible, composable components that enable rapid page creation and iteration at scale.',
+    icon: '🧩'
+  },
+  {
+    title: 'Static-Site Performance',
+    description: 'Pre-rendered pages with instant load times. No server-side rendering bottlenecks.',
+    icon: '⚡'
+  },
+  {
+    title: 'AI-Assisted Workflows',
+    description: 'Built with AI tools to accelerate development. Ready for AI-driven content and optimization.',
+    icon: '🤖'
+  },
+  {
+    title: 'Marketing-Ready Forms',
+    description: 'Lead capture forms with hidden fields, campaign attribution, and CRM integration points.',
+    icon: '📧'
+  },
+  {
+    title: 'AEO/GEO Optimized',
+    description: 'Structured data, semantic HTML, and schema markup for AI search engine visibility.',
+    icon: '🔍'
+  },
+  {
+    title: 'Git-Based Deployment',
+    description: 'CI/CD ready with GitHub Actions. Deploy to Vercel, Netlify, or any static host.',
+    icon: '🚀'
+  }
+];
+---
+
+<BaseLayout title="AI-Enabled Growth Web Demo | Astro" description="A demo showcasing static-site architecture, reusable components, and marketing-ready templates built with Astro.">
+  <Header title="AI-Enabled Growth Web" subtitle="Static-site architecture. Reusable components. Marketing-ready." />
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h2>Build Growth Experiences at Speed</h2>
+        <p class="hero-text">
+          This demo showcases a modern, AI-enabled static-site architecture built with Astro.
+          Reusable components, markdown content, lead capture forms, and schema markup —
+          everything you need for high-velocity campaign execution.
+        </p>
+        <div class="hero-ctas">
+          <CTAButton label="View Campaigns" href="/campaigns" variant="primary" size="large" />
+          <CTAButton label="Learn More" href="/about" variant="secondary" size="large" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Core Capabilities</h2>
+        <div class="feature-grid">
+          {features.map(feature => (
+            <FeatureCard
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-stack">
+      <div class="container">
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="stack-grid">
+          <div class="stack-item"><strong>Astro 4</strong><p>Static site generator</p></div>
+          <div class="stack-item"><strong>TypeScript</strong><p>Type-safe components</p></div>
+          <div class="stack-item"><strong>Markdown</strong><p>Content management</p></div>
+          <div class="stack-item"><strong>Schema.org</strong><p>AEO/GEO structured data</p></div>
+          <div class="stack-item"><strong>GitHub</strong><p>Version control & CI/CD</p></div>
+          <div class="stack-item"><strong>Vercel</strong><p>Deployment platform</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main {
+    min-height: 60vh;
+  }
+  .hero {
+    background: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 2rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .hero-text {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.125rem;
+    color: #555;
+    line-height: 1.8;
+  }
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .features {
+    padding: 4rem 1rem;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #1a1a2e;
+    margin-bottom: 2.5rem;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .tech-stack {
+    background: white;
+    padding: 4rem 1rem;
+  }
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  .stack-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  .stack-item strong {
+    display: block;
+    color: #4361ee;
+    margin-bottom: 0.25rem;
+  }
+  .stack-item p {
+    color: #666;
+    font-size: 0.875rem;
+    margin: 0;
+  }
+</style>

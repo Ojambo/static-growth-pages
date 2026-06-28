@@ -1,0 +1,33 @@
+---
+export interface Props {
+  copyright?: string;
+}
+
+const { copyright = '2026' } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; {copyright} Growth Demo. Built with Astro.</p>
+    <p class="fine-print">This is a demo project showcasing static-site architecture, reusable components, and marketing-ready templates.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #1a1a2e;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .fine-print {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+  }
+</style>

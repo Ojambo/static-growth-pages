@@ -1,0 +1,57 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<header class="header">
+  <div class="container">
+    <h1>{title}</h1>
+    {subtitle && <p class="subtitle">{subtitle}</p>}
+    <nav>
+      <a href="/">Home</a>
+      <a href="/campaigns">Campaigns</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+</style>

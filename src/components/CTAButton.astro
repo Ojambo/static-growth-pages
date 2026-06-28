@@ -1,0 +1,60 @@
+---
+export interface Props {
+  label: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
+}
+
+const { label, href, variant = 'primary', size = 'medium' } = Astro.props;
+---
+
+<a href={href} class={`cta cta--${variant} cta--${size}`}>
+  {label}
+</a>
+
+<style>
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .cta--primary {
+    background: #4361ee;
+    color: white;
+  }
+  .cta--primary:hover {
+    background: #3a56d4;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+  }
+
+  .cta--secondary {
+    background: transparent;
+    color: #4361ee;
+    border-color: #4361ee;
+  }
+  .cta--secondary:hover {
+    background: #4361ee;
+    color: white;
+  }
+
+  .cta--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  .cta--medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  .cta--large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+</style>

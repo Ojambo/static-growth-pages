@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import CTAButton from '../../components/CTAButton.astro';
+---
+
+<BaseLayout title="Campaign Landing Page | AI-Enabled Growth Demo" description="Example ABM campaign landing page with lead capture form and campaign attribution.">
+  <Header title="Campaign Landing Page" subtitle="Account-Based Marketing Experience" />
+
+  <main class="main">
+    <section class="campaign-hero">
+      <div class="container">
+        <div class="campaign-content">
+          <h2>Secure Collaboration for Your Team</h2>
+          <p class="campaign-text">
+            This is an example ABM (Account-Based Marketing) campaign page.
+            In production, this would be personalized for specific accounts,
+            industries, or personas — with tailored messaging, layouts, and CTAs.
+          </p>
+          <ul class="benefits">
+            <li>✅ Enterprise-grade security and compliance</li>
+            <li>✅ On-premises and private cloud deployment</li>
+            <li>✅ Real-time collaboration and workflow automation</li>
+            <li>✅ AI-powered insights and optimization</li>
+          </ul>
+          <CTAButton label="Request a Demo" href="#demo-form" variant="primary" size="large" />
+        </div>
+        <div class="campaign-form">
+          <LeadForm
+            title="Get Started Today"
+            actionUrl="/api/leads"
+            hiddenFields={{
+              campaignSource: 'abm-campaign',
+              campaignId: 'demo-2026',
+              utmSource: 'website',
+              utmMedium: 'organic',
+              utmCampaign: 'growth-demo'
+            }}
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="social-proof">
+      <div class="container">
+        <h2 class="section-title">Trusted by Industry Leaders</h2>
+        <p class="social-proof-text">
+          This section would display customer logos, testimonials, and case studies
+          relevant to the target account or industry segment.
+        </p>
+        <div class="logo-grid">
+          <div class="logo-placeholder">Customer 1</div>
+          <div class="logo-placeholder">Customer 2</div>
+          <div class="logo-placeholder">Customer 3</div>
+          <div class="logo-placeholder">Customer 4</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .main {
+    min-height: 60vh;
+  }
+  .campaign-hero {
+    padding: 3rem 1rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  .campaign-content h2 {
+    font-size: 2rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .campaign-text {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .benefits li {
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+    color: #333;
+  }
+  .social-proof {
+    background: white;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  .section-title {
+    font-size: 1.75rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .social-proof-text {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .logo-placeholder {
+    background: #f0f0f0;
+    padding: 2rem;
+    border-radius: 8px;
+    color: #999;
+    font-weight: 500;
+  }
+  @media (max-width: 768px) {
+    .logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

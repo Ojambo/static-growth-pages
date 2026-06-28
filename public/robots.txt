@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astro-growth-demo.ojambo.com/sitemap-index.xml

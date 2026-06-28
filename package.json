@@ -1,0 +1,15 @@
+{
+  "name": "static-growth-pages",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Reusable static-site components and templates for high-velocity marketing campaign execution. Built with Astro.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  }
+}
